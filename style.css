@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  background: #000;
+}
+.items {
+  position: relative;
+  height: auto;
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-template-rows: 20vw;
+  gap: 5vw;
+}
+.item,
+.item_add {
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  border: 1px solid #f00;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.active .item,
+.active .item_add {
+  color: #fff;
+  background: #333;
+}
+.items_color {
+  display: block;
+  margin: 10px auto;
+  width: fit-content;
+  font: 18px sans-serif;
+  color: #fff;
+  cursor: pointer;
+}
+.window_back {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0009;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.window_back.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.window {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  border-radius: 50px 0 50px 50px;
+  background: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.window.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+.window_close {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.window_close svg {
+  width: 100%;
+  height: 100%;
+}
+.window_close path {
+  fill: #000;
+}
